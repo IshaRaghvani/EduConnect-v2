@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: academia-sql
+    build: ./sql/
+    restart: always
+    environment:
+      MYSQL_DATABASE: "login_signup_db"
+      MYSQL_ROOT_PASSWORD: "root"
+    ports:
+      - 3306:3306
+    command: ["--lower_case_table_names=1"]
+    
+  flask:
+    container_name: academia-app
+    build: .
+    command: "python app.py"  
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+  

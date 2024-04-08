@@ -1,0 +1,12 @@
+markupsafe==2.0.1
+Flask
+Flask-MySQLdb
+pyOpenSSL==24.0.0
+Werkzeug
+requests==2.26.0
+requests-html==0.10.0
+beautifulsoup4==4.10.0
+Flask-Mail==0.9.1
+Flask-Caching==1.10.1
+pymongo[srv]
+flask_sqlalchemy
